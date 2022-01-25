@@ -1,3 +1,18 @@
+* {
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  opacity: 0.95;
+  overflow: hidden;
+  background: hsla(0, 0%, 64%, 0.55);
+}
+*::-webkit-scrollbar-thumb {
+  background: hsl(217, 7%, 45%);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +20,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-size: 16px; /* 1rem */
 }
 
 code {
@@ -12,6 +29,9 @@ code {
     monospace;
 }
 
+/* example content area */
 #root main>div {
-  min-height: 100vh
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
 }
