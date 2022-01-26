@@ -3,9 +3,9 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import TableViewIcon from '@mui/icons-material/TableView';
 import CloudSyncIcon from '@mui/icons-material/CloudSync';
-import StorageIcon from '@mui/icons-material/Storage';
 import PeopleIcon from '@mui/icons-material/People';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { IconBrandDocker } from '@tabler/icons';
 
 
 export const categories = [
@@ -21,7 +21,7 @@ export const categories = [
     id: 'Server',
     children: [
       { id: 'Cloud', href: '/cloud', icon: <CloudSyncIcon />, active: false },
-      { id: 'Docker', href: '/docker', icon: <StorageIcon />, active: false },
+      { id: 'Docker', href: '/docker', icon: <IconBrandDocker />, active: false },
     ],
   },
   {

@@ -75,23 +75,6 @@ function Header(props) {
           </Grid>
         </Toolbar>
       </AppBar>
-      <AppBar
-        component="div"
-        color="primary"
-        position="static"
-        elevation={0}
-        sx={{ zIndex: 0 }}
-      >
-        <Toolbar>
-          <Grid container alignItems="center" spacing={1}>
-            <Grid item xs>
-              <Typography color="inherit" variant="h5" component="h1">
-                Dashboard
-              </Typography>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
       <AppBar 
         component="div" 
         position="static" 
@@ -103,7 +86,9 @@ function Header(props) {
         <Toolbar>
           <Breadcrumbs aria-label="breadcrumb" textColor="inherit">
             <Typography color={theme.palette.neutral[400]}>Monitor</Typography>
-            <Typography color={theme.palette.neutral[300]}>Dashboard</Typography>
+            <NavLink to="/dashboard">
+              <Typography color={theme.palette.neutral[300]}>Dashboard</Typography>
+            </NavLink>
           </Breadcrumbs>
         </Toolbar>
       </AppBar>
