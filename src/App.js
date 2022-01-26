@@ -1,4 +1,5 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +12,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 //Routes
 import Home from "./routes/Home";
+import Dashboard from "./routes/Dashboard";
 import Charts from "./routes/Charts";
 import Data from "./routes/Data";
 import Signin from "./routes/Signin";
@@ -24,11 +26,15 @@ import { theme } from './theme';
 const drawerWidth = 240;
 
 function NoMatch() {
+  const NoMatchMsg = styled('div')(({ theme }) => ({
+    color: theme.palette.neutral[500],
+  }));
+
   return (
-    <div>
+    <NoMatchMsg>
       <h1>404 Not Found</h1>
       <h3>Not ready yet.</h3>
-    </div>
+    </NoMatchMsg>
   )
 }
 
@@ -67,11 +73,14 @@ function App() {
             <Header onDrawerToggle={handleDrawerToggle} />
             <Box
               component="main"
-              sx={{ flex: 1, bgcolor: 'eaeff1', overflow: 'auto' }}
+              sx={{ flex: 1, bgcolor: '#eaeff1', overflow: 'auto' }}
             >
               <Switch>
                 <Route exact path="/">
                   <Home />
+                </Route>
+                <Route path="/dashboard">
+                  <Dashboard />
                 </Route>
                 <Route path="/charts">
                   <Charts />

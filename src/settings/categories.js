@@ -12,7 +12,7 @@ export const categories = [
   {
     id: 'Monitor',
     children: [
-      { id: 'Dashboard', href: '/', icon: <DashboardIcon />, active: false },
+      { id: 'Dashboard', href: '/dashboard', icon: <DashboardIcon />, active: false },
       { id: 'Charts', href: '/charts', icon: <InsertChartIcon />, active: false },
       { id: 'Data', href: '/data', icon: <TableViewIcon />, active: false },
     ],

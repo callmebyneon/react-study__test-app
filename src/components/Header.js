@@ -1,9 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import { theme } from '../theme';
 //MUI Components
 import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
+import ButtonBase from '@mui/material/ButtonBase';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 //Icons
 import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 
@@ -33,17 +36,41 @@ function Header(props) {
               </IconButton>
             </Grid>
             <Grid item xs />
-            <Grid item>
-            <Tooltip title="Set up">
-                <IconButton color="inherit">
-                  <SettingsIcon />
-                </IconButton>
+            <Grid item sx={{ m: 1 }}>
+              <Tooltip title="Home">
+                <NavLink to="/" style={{ color: 'inherit' }}>
+                  <ButtonBase 
+                    sx={{
+                      p: 1,
+                      alignItems: 'center',
+                      borderRadius: '8px',
+                      transition: 'all .2s ease-in-out',
+                      backgroundColor: theme.palette.primary.light,
+                      color: theme.palette.primary.text,
+                    }}
+                  >
+                    <HomeIcon color="inherit" fontSize='small' />
+                  </ButtonBase>
+                </NavLink>
               </Tooltip>
             </Grid>
-            <Grid item sx={{ ml: 1 }}>
-              <IconButton color="inherit" sx={{ p: 0.5 }}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" sx={{ width: 30, height: 30 }} />
-              </IconButton>
+            <Grid item sx={{ m: 1 }}>
+              <Tooltip title="Set up">
+                <NavLink to="/setup" style={{ color: 'inherit' }}>
+                  <ButtonBase 
+                    sx={{
+                      p: 1,
+                      alignItems: 'center',
+                      borderRadius: '8px',
+                      transition: 'all .2s ease-in-out',
+                      backgroundColor: theme.palette.primary.light,
+                      color: theme.palette.primary.text,
+                    }}
+                  >
+                    <SettingsIcon color="inherit" fontSize='small' />
+                  </ButtonBase>
+                </NavLink>
+              </Tooltip>
             </Grid>
           </Grid>
         </Toolbar>
@@ -75,8 +102,8 @@ function Header(props) {
       >
         <Toolbar>
           <Breadcrumbs aria-label="breadcrumb" textColor="inherit">
-            <Typography color="text.light" sx={{ opacity: '0.7' }}>Monitor</Typography>
-            <Typography color="text.light">Dashboard</Typography>
+            <Typography color={theme.palette.neutral[400]}>Monitor</Typography>
+            <Typography color={theme.palette.neutral[300]}>Dashboard</Typography>
           </Breadcrumbs>
         </Toolbar>
       </AppBar>
