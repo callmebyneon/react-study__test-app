@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material';
+import { indigo, blueGrey, deepPurple, red, teal, deepOrange } from '@mui/material/colors';
 import { spacing } from '@mui/system';
 
 export const theme = createTheme({
@@ -110,7 +111,7 @@ export const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#081627',
+          backgroundColor: indigo[900],
         },
       },
     },
@@ -200,23 +201,35 @@ export const theme = createTheme({
     },
     divider: 'hsla(228, 25%, 92%, 10%)',
     primary: {
-      main: '#1F2891',
+      light: indigo[400],
+      main: indigo[900],
+      dark: '#0D125A',
+      text: indigo[50],
     },
     secondary: {
-      main: '#FB5A2E',
-      dark: '#D73B21'
+      light: blueGrey[300],
+      main: blueGrey[600],
+      dark: blueGrey[900],
     },
     error: {
-      main: '#F24C3D'
+      light: red[300],
+      main: red[600],
+      dark: red[900],
     },
     warning: {
-      main: '#F2BE22'
+      light: deepOrange[300],
+      main: deepOrange[600],
+      dark: deepOrange[900],
     },
     success: {
-      main: '#26A699'
+      light: teal[300],
+      main: teal[600],
+      dark: teal[900],
     },
     info: {
-      main: '#64748B'
+      light: deepPurple[300],
+      main: deepPurple[600],
+      dark: deepPurple[900],
     },
     text: {
       primary: '#121828',

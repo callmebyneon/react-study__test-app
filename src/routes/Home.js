@@ -11,7 +11,7 @@ import Paper from '@mui/material/Paper';
 // Icons
 import { IconChevronRight } from '@tabler/icons';
 
-import { HeatMapChart, BarChart, RadialBarChart } from '../components/SampleChart'
+import { HeatMapChart, StackedAreaChart, RadialBarChart } from '../components/SampleChart'
 
 
 const PaperItem = styled(Paper)(({ theme }) => ({
@@ -20,6 +20,7 @@ const PaperItem = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textlign: 'left',
   bgcolor: theme.palette.background.paper,
+  overflow: 'hidden',
 }));
 
 const IconBadge = styled(Avatar)(({ theme }) => ({
@@ -41,7 +42,7 @@ export default function Home() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
-          <PaperItem sx={{ bgcolor: 'secondary.light', '& h2': { pl: 1, color: '#fff' } }}>
+          <PaperItem sx={{ bgcolor: 'primary.light', '& h2': { pl: 1, color: '#fff' } }}>
             <NavLink to="/dashboard">
               <h2>Dashboard</h2>
               <IconBadge>
@@ -51,7 +52,7 @@ export default function Home() {
           </PaperItem>
         </Grid>
         <Grid item xs={12} md={4}>
-          <PaperItem sx={{ bgcolor: 'secondary.light', '& h2': { pl: 1, color: '#fff' } }}>
+          <PaperItem sx={{ bgcolor: 'primary.light', '& h2': { pl: 1, color: '#fff' } }}>
             <NavLink to="/charts">
               <h2>Charts</h2>
               <IconBadge>
@@ -61,7 +62,7 @@ export default function Home() {
           </PaperItem>
         </Grid>
         <Grid item xs={12} md={4}>
-          <PaperItem sx={{ bgcolor: 'info.light', '& h2': { pl: 1, color: '#fff' } }}>
+          <PaperItem sx={{ bgcolor: 'secondary.light', '& h2': { pl: 1, color: '#fff' } }}>
             <NavLink to="/setup">
               <h2>Set Up</h2>
               <IconBadge>
@@ -72,17 +73,17 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} md={8}>
           <PaperItem>
-            <BarChart width={746} height={320} />
+            <StackedAreaChart />
           </PaperItem>
         </Grid>
         <Grid item xs={12} md={4}>
           <PaperItem>
-            <RadialBarChart height={350} />
+            <RadialBarChart />
           </PaperItem>
         </Grid>
         <Grid item xs={12}>
           <PaperItem>
-            <HeatMapChart height={400} />
+            <HeatMapChart />
           </PaperItem>
         </Grid>
       </Grid>

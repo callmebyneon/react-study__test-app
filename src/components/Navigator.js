@@ -52,10 +52,13 @@ function Copyright() {
 const item = {
   py: '2px',
   px: 3,
-  color: 'rgba(255, 255, 255, 0.7)',
+  color: 'primary.text',
   '&:hover, &:focus': {
     bgcolor: 'rgba(255, 255, 255, 0.1)',
   },
+  '& svg': {
+    color: 'primary.text',
+  }
 };
 
 const itemCategory = {
@@ -79,15 +82,14 @@ export default function Navigator(props) {
         {categories.map(({ id, children }) => (
           <Box 
             key={id} 
-            sx={{ 
-              bgcolor: '#101F33', 
+            sx={{
               '& a': { textDecoration: 'none' },
               '& .Mui-selected': { bgcolor: 'rgba(255, 255, 255, 0.4)' },
               '& .Mui-selected>div:first-child': { color: '#aab0bd' }
             }}
           >
             <ListItem sx={{ py: 2, px: 3 }}>
-              <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
+              <ListItemText sx={{ color: 'primary.text' }}>{id}</ListItemText>
             </ListItem>
             {children.map(({ id: childId, href, icon }) => (
               <NavLink 
