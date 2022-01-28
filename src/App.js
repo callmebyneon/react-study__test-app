@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from 'react-router-dom';
 //MUI Components
 import { ThemeProvider } from '@mui/material/styles';
@@ -11,7 +12,6 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 //Routes
-import Home from "./routes/Home";
 import Dashboard from "./routes/Dashboard";
 import Charts from "./routes/Charts";
 import Data from "./routes/Data";
@@ -77,7 +77,7 @@ function App() {
             >
               <Switch>
                 <Route exact path="/">
-                  <Home />
+                  <Redirect to="/dashboard" />
                 </Route>
                 <Route path="/dashboard">
                   <Dashboard />
